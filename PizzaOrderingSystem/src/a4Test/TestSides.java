@@ -12,9 +12,9 @@ import a4.e414.model.Sides;
 public class TestSides {
 
 	private Sides side;
-	private ItemDetailsModel menuItemInfo1;
-	private ItemDetailsModel menuItemInfo2;
-	private ItemDetailsModel menuItemInfo3;
+	private ItemDetailsModel MI1;
+	private ItemDetailsModel MI2;
+	private ItemDetailsModel MI3;
 	FullMenuModel menu;
 	
 	@Before
@@ -26,18 +26,18 @@ public class TestSides {
 		side.setSubOrderId("125");
 		
 		menu = FullMenuModel.getInstance();
-		menuItemInfo1 = new ItemDetailsModel();
-		menuItemInfo1.setName("large");
-		menuItemInfo1.setPrice(2);
-		menuItemInfo2 = new ItemDetailsModel();
-		menuItemInfo2.setName("super");
-		menuItemInfo2.setPrice(5);
-		menuItemInfo3 = new ItemDetailsModel();
-		menuItemInfo3.setName("duper");
-		menuItemInfo3.setPrice(10);
-		menu.addElement(menuItemInfo1,"side Size");
-		menu.addElement(menuItemInfo2,"side Type");
-		menu.addElement(menuItemInfo3,"side Type");
+		MI1 = new ItemDetailsModel();
+		MI1.setName("large");
+		MI1.setPrice(2);
+		MI2 = new ItemDetailsModel();
+		MI2.setName("super");
+		MI2.setPrice(5);
+		MI3 = new ItemDetailsModel();
+		MI3.setName("duper");
+		MI3.setPrice(10);
+		menu.addElement(MI1,"Side Size");
+		menu.addElement(MI2,"Side Type");
+		menu.addElement(MI3,"Side Type");
 	}
 	
 	@Test

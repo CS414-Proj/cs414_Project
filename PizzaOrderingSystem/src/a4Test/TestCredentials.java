@@ -10,34 +10,35 @@ import a4.e414.model.StaffDetails;
 import a4.e414.model.UserLoginModel;
 
 public class TestCredentials {
-	
+
 	@Test
-	public void testValidLogin() {
-		CSUPizzaStore store = new CSUPizzaStore();
-		store.addStaffToDirectory();
-		UserLoginModel loginModel = new UserLoginModel();
-		StaffDetails employeeDetails=loginModel.checkCredentials("cashier","cash");
-		assertEquals("cashier", employeeDetails.getStaffId());
-		assertEquals("cash", employeeDetails.getStaffPassword());
-		assertEquals("cashier", employeeDetails.getStaffRole());
+	public void testWrongCredentials() {
+		CSUPizzaStore str = new CSUPizzaStore();
+		str.addStaffToDirectory();
+		UserLoginModel lm = new UserLoginModel();
+		StaffDetails sd = lm.checkCredentials("abc", "xyz");
+		assertNull(sd);
 	}
 	
-	@Test
-	public void testInValidLogin() {
-		CSUPizzaStore store = new CSUPizzaStore();
-		store.addStaffToDirectory();
-		UserLoginModel loginModel = new UserLoginModel();
-		StaffDetails employeeDetails=loginModel.checkCredentials("abc","xyz");
-		assertNull(employeeDetails);
-	}
 	
 	@Test
-	public void testInValidLogin2() {
-		CSUPizzaStore store = new CSUPizzaStore();
-		store.addStaffToDirectory();
-		UserLoginModel loginModel = new UserLoginModel();
-		StaffDetails employeeDetails=loginModel.checkCredentials(null,null);
-		assertNull(employeeDetails);
+	public void testCorrectCredentials() {
+		CSUPizzaStore str = new CSUPizzaStore();
+		str.addStaffToDirectory();
+		UserLoginModel lm = new UserLoginModel();
+		StaffDetails sd = lm.checkCredentials("cashier", "cashier");
+		assertEquals("cashier", sd.getStaffId());
+		assertEquals("cashier", sd.getStaffPassword());
+		assertEquals("cashier", sd.getStaffRole());
 	}
 
+
+	@Test
+	public void testWrongCredentials2() {
+		CSUPizzaStore str = new CSUPizzaStore();
+		str.addStaffToDirectory();
+		UserLoginModel lm = new UserLoginModel();
+		StaffDetails sd = lm.checkCredentials(null, null);
+		assertNull(sd);
+	}
 }
