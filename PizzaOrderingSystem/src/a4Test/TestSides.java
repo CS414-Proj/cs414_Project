@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import a4.e414.model.ItemDetailsModel;
-import a4.e414.model.FullMenuModel;
-import a4.e414.model.Sides;
+import a4.k414.model.FullMenuModel;
+import a4.k414.model.ItemDetailsModel;
+import a4.k414.model.Sides;
 
 public class TestSides {
 

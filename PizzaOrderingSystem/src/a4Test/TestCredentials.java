@@ -5,9 +5,9 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import a4.e414.model.CSUPizzaStore;
-import a4.e414.model.StaffDetails;
-import a4.e414.model.UserLoginModel;
+import a4.k414.model.CSUPizzaStore;
+import a4.k414.model.StaffDetails;
+import a4.k414.model.UserLoginModel;
 
 public class TestCredentials {
 

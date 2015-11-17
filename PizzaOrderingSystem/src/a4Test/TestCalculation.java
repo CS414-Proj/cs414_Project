@@ -5,12 +5,12 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import a4.e414.model.PizzaModel;
-import a4.e414.model.DrinksModel;
-import a4.e414.model.TransactionModel;
-import a4.e414.model.Sides;
-import a4.e414.model.StoreOrderModel;
-import a4.e414.model.PizzaToppings;
+import a4.k414.model.DrinksModel;
+import a4.k414.model.PizzaModel;
+import a4.k414.model.PizzaToppings;
+import a4.k414.model.Sides;
+import a4.k414.model.StoreOrderModel;
+import a4.k414.model.TransactionModel;
 
 public class TestCalculation {
 
