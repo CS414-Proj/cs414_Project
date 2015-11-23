@@ -46,12 +46,7 @@ public class ManagerActionsController
 	        	homeScreenManager.setVisible(false);
 	        	new DisplayOrderController(user);
 	        }
-/*	        else if(tempButton.equals(managerHomeView.getInventoryButton())) 
-	        {
-	        	managerHomeView.setVisible(false);
-	        	new InventoryController(user);
-	        }
-*/	        else if(tempButton.equals(homeScreenManager.getLogoutButton())) 
+	        else if(tempButton.equals(homeScreenManager.getLogoutButton())) 
 	        {
 	        	homeScreenManager.setVisible(false);
 	        	new UserLoginController();
