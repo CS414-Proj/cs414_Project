@@ -23,4 +23,12 @@ public class UserLoginModel {
 		
 		return loggedinStaff;
 	}
+	public CustomerModel authenticate(String id, String pwd){
+		for(CustomerModel customer : CSUPizzaStore.getBranchInstance().getCustomerList()){
+			if(customer.getUserId().equals(id) && customer.getPassword().equals(pwd)){
+				return customer;
+			}
+		}
+		return null;
+	}
 }
