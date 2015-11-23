@@ -195,8 +195,8 @@ public class PlaceOrderController {
 				if(flag == 0){
 				//
 				takeOrderScreen.setVisible(false);
-				TransactionModel sale = new TransactionModel(user,order,action);
-				sale.createPayment();
+				TransactionModel trans = new TransactionModel(user,order,action);
+				trans.createPayment();
 				}
 			}
 			else if(e.getSource()==takeOrderScreen.getCancelButton()){
