@@ -32,7 +32,7 @@ public class CreateSpecialController {
 	public CreateSpecialController(String user){
 		this.user=user;
 		this.splOrder = new StoreOrderModel();
-		splOrder.setOrderNumber("999");
+		splOrder.setOrderNumber("143");
 		this.setSpecialScreen = new CreateSpecialScreen();
 		this.setSpecialScreen.ButtonListner(new SetspecialListner());
 		this.setSpecial=this;
