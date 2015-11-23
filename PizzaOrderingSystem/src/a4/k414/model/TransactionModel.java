@@ -2,7 +2,7 @@ package a4.k414.model;
 
 public class TransactionModel {
 
-	private String saleNumber;
+	private String transNumber;
 	private float totalAmount;
 	private StoreOrderModel order;
 	private PaymentModel payment;
@@ -16,25 +16,25 @@ public class TransactionModel {
 
 	public TransactionModel(String user,StoreOrderModel order,String action){
 		this.order=order;
-		saleNumber = register.getNextSaleNumber();
+		transNumber = register.getNextTransactionNumber();
 		
 		//calculate total,tax,balancedue
 		this.subTotal = subtotal();
 		this.tax = tax(subTotal);
 		this.totalAmount = subTotal+tax;
-		this.saleNumber = register.getNextSaleNumber();
+		this.transNumber = register.getNextTransactionNumber();
 		this.user = user;
 		this.action = action;
 		
 		
 	}
-	public void createPayment(){
+	public PaymentModel createPayment(){
 		this.payment=new PaymentModel(this,user,subTotal,tax,totalAmount,order.getOrderNumber()+"",action);
+		return payment;		
 	}
 
 	public void addtoReg(){
-		// Save to register after payment successful
-		register.addSale(this);
+		register.addTrans(this);
 		register.addOrder(order);
 	}
 	
@@ -55,8 +55,33 @@ public class TransactionModel {
 		return subtotal;
 	}
 
+
+	public String getTransNumber() {
+		return transNumber;
+	}
+	
+	public StoreOrderModel getOrder() {
+		return order;
+	}
+
+	public PaymentModel getPayment() {
+		return payment;
+	}
+
+	public String getAction() {
+		return action;
+	}
+
+	public RegisterModel getRegister() {
+		return register;
+	}
+	
 	public float tax(float subtotal){
 		float tax = (subtotal*register.getTax())/100;
 		return tax;
+	}
+	
+	public String getUser() {
+		return user;
 	}
 }
