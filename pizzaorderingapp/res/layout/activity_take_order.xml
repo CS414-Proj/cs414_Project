@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pizza2"
+    tools:context=".TakeOrderActivity" >
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="17dp"
+        android:onClick="onDrinkClickMethod"
+        android:text="Drink"
+        android:textColor="#B40404" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignLeft="@+id/button2"
+        android:onClick="onDaySpecialClickMethod"
+        android:text="Day Special"
+        android:textColor="#B40404" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button5"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="26dp"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+            <LinearLayout
+                android:id="@+id/linearScrollLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="20dp"
+        android:onClick="onCancelClickMethod"
+        android:text="Cancel"
+        android:textColor="#B40404"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button6"
+        android:layout_alignRight="@+id/linearLayout1"
+        android:onClick="onConfirmClickMethod"
+        android:text="Confirm"
+        android:textColor="#B40404"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button6"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_alignLeft="@+id/textView2"
+        android:onClick="onSidesClickMethod"
+        android:text="Sides"
+        android:textColor="#B40404" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:onClick="onPizzaClickMethod"
+        android:text="Pizza"
+        android:textColor="#B40404" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Place Order"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#B40404"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button5"
+        android:layout_alignBottom="@+id/button5"
+        android:layout_centerHorizontal="true"
+        android:onClick="onDeleteSelectedClickMethod"
+        android:text="Delete Selected"
+        android:textColor="#B40404"
+        android:textStyle="bold|italic" />
+
+</RelativeLayout>
