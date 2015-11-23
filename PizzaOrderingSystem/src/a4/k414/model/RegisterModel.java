@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class RegisterModel {
 
-	private ArrayList<TransactionModel> saleList = new ArrayList<TransactionModel>();
-	private int currentsaleNumber = 0;	//My Edit	
+	private ArrayList<TransactionModel> transactionList = new ArrayList<TransactionModel>();
+	private int currenttransNumber = 0;	//My Edit	
 	private int currentOrderNumber= 0;	//My Edit
 	private static RegisterModel register = new RegisterModel();
 	private ArrayList<StoreOrderModel> orderList = new ArrayList<StoreOrderModel>();
 	private int tax=8;
 	
 	
-	public int getCurrentsaleNumber() {
-		return currentsaleNumber;
+	public int getCurrenttransNumber() {
+		return currenttransNumber;
 	}
 
 	public int getCurrentOrderNumber() {
@@ -49,18 +49,27 @@ public class RegisterModel {
 		return currentOrderNumber+"";
 	}
 
-	public String getNextSaleNumber(){
-		currentsaleNumber = currentsaleNumber+1;
-		return currentsaleNumber+"";
+	public String getNextTransactionNumber(){
+		currenttransNumber = currenttransNumber+1;
+		return currenttransNumber+"";
+	}
+	
+	public TransactionModel getTrans(String transNumber){
+		for(TransactionModel transaction : transactionList){
+			if(transaction.getTransNumber().equals(transNumber)){
+				return transaction;
+			}
+		}
+		return null;
 	}
 
-	public ArrayList<TransactionModel> getSaleList() {
-		return saleList;
+	public ArrayList<TransactionModel> getTransList() {
+		return transactionList;
 	}
 
-	public void addSale(TransactionModel sale) {
+	public void addTrans(TransactionModel trans) {
 
-		saleList.add(sale);
+		transactionList.add(trans);
 	}
 
 }
