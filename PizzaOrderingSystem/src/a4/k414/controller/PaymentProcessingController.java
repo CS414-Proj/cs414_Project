@@ -19,13 +19,13 @@ public class PaymentProcessingController {
 	NumberFormat formatter = new DecimalFormat("#.00");   //My Edit
 	private String user;
 	private PaymentProcessingScreen payView;
-	private TransactionModel sale;
+	private TransactionModel trans;
 	private String paymentMode="none";
 	private String action;
 
-	public PaymentProcessingController(TransactionModel sale,String user,String subTotalVal,String taxVal,String totalVal,String orderNumValue,String action){
+	public PaymentProcessingController(TransactionModel trans,String user,String subTotalVal,String taxVal,String totalVal,String orderNumValue,String action){
 		this.user=user;
-		this.sale=sale;
+		this.trans=trans;
 		this.action = action;
 		payView = new PaymentProcessingScreen(subTotalVal, taxVal, totalVal,orderNumValue,action);
 		this.payView.ButtonListner(new PaymentListner());
@@ -94,7 +94,7 @@ public class PaymentProcessingController {
 					float balanceDue = Float.parseFloat(payView.getBalanceDueField().getText());
 					if(cashGiven >= balanceDue){
 						new CashPaymentModel(cashGiven,cashReturned);
-						sale.addtoReg(); // add order to list in Register and save sale
+						trans.addtoReg(); 
 						new CashierActionsController(user);
 						payView.setVisible(false);
 					}
@@ -134,7 +134,7 @@ public class PaymentProcessingController {
 					CardPaymentModel paybyCard= new CardPaymentModel(name,cardNum,expiry,ccNum);
 					boolean authorized = paybyCard.authorize();
 					if(authorized){
-						sale.addtoReg();
+						trans.addtoReg();
 						if(action.equals("kiosk")){
 							new AutomatedKioskController();
 						}
