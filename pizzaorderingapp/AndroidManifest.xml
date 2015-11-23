@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.colostate.cs414k"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon2"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:launchMode="singleTop"
+            android:name="cs414.a5.anvesh.SignInActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:noHistory="true"
+            android:name="cs414.a5.anvesh.PizzaActivity"
+            android:label="@string/title_activity_second" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name="cs414.a5.anvesh.TakeOrderActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name="cs414.a5.anvesh.SignUpActivity"
+            android:label="@string/title_activity_sign_up" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name="cs414.a5.anvesh.WelcomeActivity"
+            android:label="@string/title_activity_welcome" >
+        </activity>
+        <activity
+            android:noHistory="true"
+            android:name="cs414.a5.anvesh.SidesActivity"
+            android:label="@string/title_activity_sides" >
+        </activity>
+        <activity
+            android:noHistory="true"
+            android:name="cs414.a5.anvesh.DrinkActivity"
+            android:label="@string/title_activity_drink" >
+        </activity>
+        <activity
+            android:noHistory="true"
+            android:name="cs414.a5.anvesh.PaymentActivity"
+            android:label="@string/title_activity_payment" >
+        </activity>
+    </application>
+
+</manifest>
